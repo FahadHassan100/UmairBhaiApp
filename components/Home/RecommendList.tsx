@@ -1,64 +1,61 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import React from "react";
-import CategoryItem from "./CategoryItem";
+import RecommendItem from "./RecommendItem";
 
 const Data = [
   {
     id: 1,
     name: "Electrician",
-    icon: "https://cdn-icons-png.flaticon.com/128/3713/3713314.png",
+    picture: require("@/assets/images/p1.jpg"),
   },
   {
     id: 2,
     name: "Plumber",
-    icon: "https://cdn-icons-png.flaticon.com/128/12029/12029339.png",
+    picture: require("@/assets/images/p1.jpg"),
   },
   {
     id: 3,
     name: "Cleaning",
-    icon: "https://cdn-icons-png.flaticon.com/128/11678/11678068.png",
+    picture: require("@/assets/images/p1.jpg"),
   },
   {
     id: 4,
     name: "Repairing",
-    icon: "https://cdn-icons-png.flaticon.com/128/12029/12029589.png",
+    picture: require("@/assets/images/p1.jpg"),
   },
   {
     id: 5,
     name: "Painting",
-    icon: "https://cdn-icons-png.flaticon.com/128/16434/16434705.png",
+    picture: require("@/assets/images/p1.jpg"),
   },
   {
     id: 6,
     name: "Driver",
-    icon: "https://cdn-icons-png.flaticon.com/128/2684/2684218.png",
+    picture: require("@/assets/images/p1.jpg"),
   },
 ];
 
-export default function Category() {
+export default function RecommendList() {
   return (
-    <View>
+    <View style={Styles.mainContainer}>
       <View style={Styles.categoryContainer}>
-        <Text style={Styles.catHeading}>Category</Text>
+        <Text style={Styles.catHeading}>Recommended</Text>
         <Text style={Styles.catViewAll}>View All</Text>
       </View>
       <FlatList
         data={Data}
-        horizontal={true}
-        renderItem={({ item, index }) => (
-          <CategoryItem
-            category={item}
-            key={index}
-            onCategoryPress={(category: any) => console.log(category)}
-          />
-        )}
-        keyExtractor={(item: any) => item.id}
+        horizontal={false}
+        renderItem={({ item }) => <RecommendItem recommeds={item} />}
+        nestedScrollEnabled
       />
     </View>
   );
 }
 
 const Styles = StyleSheet.create({
+  mainContainer: {
+    height: 600,
+  },
   categoryContainer: {
     display: "flex",
     justifyContent: "space-between",

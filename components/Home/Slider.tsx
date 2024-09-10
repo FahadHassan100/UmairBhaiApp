@@ -42,7 +42,7 @@ const Styles = StyleSheet.create({
   sliderHeading: {
     fontFamily: "outfit-bold",
     fontSize: 20,
-    padding: 20,
+    paddingTop: 20,
   },
   imageSlider: {},
   sliderImage: {

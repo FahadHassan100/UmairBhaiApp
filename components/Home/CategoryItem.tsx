@@ -1,19 +1,24 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableNativeFeedback,
+} from "react-native";
 import React from "react";
 
-export default function CategoryItem(category: any) {
+export default function CategoryItem({ category, onCategoryPress }: any) {
   //console.log(category.category.icon);
 
   return (
-    <View style={Styles.check}>
-      <View style={Styles.iconsBox}>
-        <Image
-          source={{ uri: category.category.icon }}
-          style={Styles.iconStyle}
-        />
+    <TouchableNativeFeedback onPress={() => onCategoryPress(category)}>
+      <View style={Styles.check}>
+        <View style={Styles.iconsBox}>
+          <Image source={{ uri: category.icon }} style={Styles.iconStyle} />
+        </View>
+        <Text style={Styles.iconText}>{category.name}</Text>
       </View>
-      <Text style={Styles.iconText}>{category.category.name}</Text>
-    </View>
+    </TouchableNativeFeedback>
   );
 }
 
@@ -21,8 +26,7 @@ const Styles = StyleSheet.create({
   check: {
     display: "flex",
     alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#000",
+    marginRight: 30,
   },
   iconsBox: {
     padding: 10,
@@ -36,7 +40,7 @@ const Styles = StyleSheet.create({
     height: 40,
   },
   iconText: {
-    fontSize: 12,
+    fontSize: 11,
     color: "#c1c1c1",
   },
 });
