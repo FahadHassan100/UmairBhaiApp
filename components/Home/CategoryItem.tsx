@@ -41,6 +41,7 @@ const Styles = StyleSheet.create({
   },
   iconText: {
     fontSize: 11,
-    color: "#c1c1c1",
+    fontWeight: "bold",
+    marginTop: 5,
   },
 });

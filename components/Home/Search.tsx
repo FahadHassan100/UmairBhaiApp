@@ -6,11 +6,11 @@ export default function Search() {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.searchInputArea}>
-        <Ionicons name="search-circle-sharp" size={30} color="gray" />
+        <Ionicons name="search-circle-sharp" size={45} color="#1a73e8" />
         <TextInput placeholder="Search...." style={styles.SearchInput} />
       </View>
       <View style={styles.searcFilterIcon}>
-        <Ionicons name="filter-circle" size={35} color="gray" />
+        <Ionicons name="filter-circle" size={45} color="#1a73e8" />
       </View>
     </View>
   );
@@ -25,11 +25,12 @@ const styles = StyleSheet.create({
   },
   searchInputArea: {
     width: 300,
+    height: 50,
     display: "flex",
     flexDirection: "row",
     borderWidth: 2,
-    borderColor: "gray",
-    borderRadius: 20,
+    borderColor: "#1a73e8",
+    borderRadius: 30,
   },
   SearchInput: {
     flex: 1,
@@ -39,5 +40,6 @@ const styles = StyleSheet.create({
   searcFilterIcon: {
     flex: 1,
     alignItems: "flex-end",
+    paddingTop: 3,
   },
 });

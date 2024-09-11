@@ -1,25 +1,35 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import Fontisto from "@expo/vector-icons/Fontisto";
 
 export default function RecommendItem({ recommeds }: any) {
   return (
     <View>
       <View style={styles.rbox}>
-        <View style={styles.picArea}>
-          <Image source={recommeds.picture} style={styles.rPicture} />
-        </View>
-        <View>
-          <Text style={styles.catName}>Category Name</Text>
-          <Text style={styles.userName}>Fahad Hassan</Text>
-          <View style={styles.PandRSection}>
-            <Text style={styles.priceRate}>$20</Text>
-            <Text style={styles.hourRate}>/hr</Text>
-            <Text>Star</Text>
-            <Text style={styles.rating}>4.9(120 Reviews)</Text>
+        <View style={styles.serviceProvicer}>
+          <View style={styles.picArea}>
+            <Image source={recommeds.picture} style={styles.rPicture} />
+          </View>
+          <View>
+            <Text style={styles.catName}>{recommeds.categoryName}</Text>
+            <Text style={styles.userName}>{recommeds.username}</Text>
+            <View style={styles.PandRSection}>
+              <Text style={styles.priceRate}>$20</Text>
+              <Text style={styles.hourRate}>/hr</Text>
+              <Image
+                source={require("@/assets/images/star.png")}
+                style={styles.star}
+              />
+              <Text style={styles.rating}>4.9(120 Reviews)</Text>
+            </View>
           </View>
         </View>
-        <View>
-          <Text>Save</Text>
+        <View style={styles.check}>
+          {recommeds.selected === 0 ? (
+            <Fontisto name="favorite" size={24} color="#c1c1c1" />
+          ) : (
+            <Fontisto name="favorite" size={24} color="#1a73e8" />
+          )}
         </View>
       </View>
     </View>
@@ -35,6 +45,10 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 5,
     marginBottom: 20,
+  },
+  serviceProvicer: {
+    display: "flex",
+    flexDirection: "row",
   },
   picArea: {
     marginLeft: 5,
@@ -65,8 +79,23 @@ const styles = StyleSheet.create({
   hourRate: {
     fontSize: 12,
     lineHeight: 22,
+    marginRight: 5,
+  },
+  star: {
+    width: 15,
+    height: 15,
+    marginTop: 3,
+    marginRight: 5,
   },
   rating: {
-    fontSize: 14,
+    fontSize: 12,
+    lineHeight: 20,
+  },
+  check: {
+    display: "flex",
+    alignItems: "flex-end",
+    marginRight: 15,
+    marginTop: 10,
+    flex: 1,
   },
 });

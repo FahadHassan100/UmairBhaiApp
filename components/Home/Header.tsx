@@ -9,7 +9,8 @@ export default function Header() {
         <Text style={Styles.headerHeading}>What Service Do You Need?</Text>
       </View>
       <View style={Styles.headingIcon}>
-        <Ionicons name="notifications-circle" size={40} color="gray" />
+        <Ionicons name="notifications-circle" size={45} color="#1a73e8" />
+        <Text style={Styles.numOfNoti}>4</Text>
       </View>
     </View>
   );
@@ -30,6 +31,19 @@ const Styles = StyleSheet.create({
     flex: 1,
     alignItems: "flex-end",
     marginTop: 10,
+  },
+  numOfNoti: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    backgroundColor: "red",
+    borderRadius: 50,
+    color: "#fff",
+    fontSize: 10,
+    width: 20,
+    height: 20,
+    paddingLeft: 7,
+    paddingTop: 3,
   },
   headerHeading: {
     fontSize: 30,

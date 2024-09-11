@@ -5,33 +5,38 @@ import RecommendItem from "./RecommendItem";
 const Data = [
   {
     id: 1,
-    name: "Electrician",
-    picture: require("@/assets/images/p1.jpg"),
+    categoryName: "Electrician",
+    username: "Jason Theo",
+    picture: require("@/assets/images/E1.jpg"),
+    selected: 0,
   },
   {
     id: 2,
-    name: "Plumber",
+    categoryName: "Plumber",
+    username: "Hanry paul",
     picture: require("@/assets/images/p1.jpg"),
+    selected: 1,
   },
   {
     id: 3,
-    name: "Cleaning",
-    picture: require("@/assets/images/p1.jpg"),
+    categoryName: "Cleaning",
+    username: "Emily Maya",
+    picture: require("@/assets/images/c1.jpg"),
+    selected: 0,
   },
   {
     id: 4,
-    name: "Repairing",
-    picture: require("@/assets/images/p1.jpg"),
+    categoryName: "Driver",
+    username: "Ethan Ryan",
+    picture: require("@/assets/images/d1.jpg"),
+    selected: 1,
   },
   {
     id: 5,
-    name: "Painting",
-    picture: require("@/assets/images/p1.jpg"),
-  },
-  {
-    id: 6,
-    name: "Driver",
-    picture: require("@/assets/images/p1.jpg"),
+    categoryName: "Repairing",
+    username: "Natalie Rhea",
+    picture: require("@/assets/images/p2.jpg"),
+    selected: 0,
   },
 ];
 
@@ -46,7 +51,8 @@ export default function RecommendList() {
         data={Data}
         horizontal={false}
         renderItem={({ item }) => <RecommendItem recommeds={item} />}
-        nestedScrollEnabled
+        scrollEnabled={false}
+        //nestedScrollEnabled
       />
     </View>
   );
@@ -54,7 +60,7 @@ export default function RecommendList() {
 
 const Styles = StyleSheet.create({
   mainContainer: {
-    height: 600,
+    height: "auto",
   },
   categoryContainer: {
     display: "flex",
