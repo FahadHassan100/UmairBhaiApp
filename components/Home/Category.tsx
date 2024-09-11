@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import React from "react";
 import CategoryItem from "./CategoryItem";
+import { router } from "expo-router";
 
 const Data = [
   {
@@ -49,7 +50,9 @@ export default function Category() {
           <CategoryItem
             category={item}
             key={index}
-            onCategoryPress={(category: any) => console.log(category)}
+            onCategoryPress={(category: any) =>
+              router.push("/categorylist/check")
+            }
           />
         )}
         keyExtractor={(item: any) => item.id}
